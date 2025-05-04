@@ -4,21 +4,22 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    GameManager gameManager;
     [SerializeField]
-    Interaction currentPlayerLooking;
+    Interaction currentInteraction;
     [SerializeField]
     List<Interaction> currentCloseInteractions = new List<Interaction>();
 
     [SerializeField]
-    bool isPlayerTalking= false;
+    bool isInteracting= false;
 
 
     public GameObject ObjectPlayerLookingAt
     {
         get
         {
-            if (currentPlayerLooking)
-                return currentPlayerLooking.gameObject;
+            if (currentInteraction)
+                return currentInteraction.gameObject;
             else return null;
         }
     }
@@ -27,14 +28,13 @@ public class Player : MonoBehaviour
     {
         get
         {
-            return currentPlayerLooking;
+            return currentInteraction;
         }
         set
         {
-            currentPlayerLooking = value;
+            currentInteraction = value;
         }
     }
-
 
 
 
@@ -59,9 +59,10 @@ public class Player : MonoBehaviour
             currentCloseInteractions.Add(newInteraction);
             if (currentCloseInteractions.Count == 1)
             {
-                currentPlayerLooking = newInteraction;
-                newInteraction.OnPlayerLooking();
+
+                currentInteraction = newInteraction;
                 //QUI TRIGGERARE LA UI DELL'INTERAZIONE COL BOTTONE E TESTO
+                GameManager.instance.ShowInteractionPrompt(currentInteraction, newInteraction.interactionPromptPos, newInteraction.offsetPrompt);
             }
         }
     }
@@ -71,13 +72,31 @@ public class Player : MonoBehaviour
         if (currentCloseInteractions.Contains(oldInteraction))
         {
             currentCloseInteractions.Remove(oldInteraction);
-            if (oldInteraction == currentPlayerLooking)
+            if (oldInteraction == currentInteraction)
             {
-                currentPlayerLooking = null;
-                oldInteraction.OnPlayerStopLooking();
-                //QUI TRIGGERARE LA UI DA TOGLIERE
+                currentInteraction = null;
+                if (currentCloseInteractions.Count <= 0)
+                {
+                    GameManager.instance.HideInteractionPrompt();
+                }
+                else
+                {
+                    Interaction nextInter = currentCloseInteractions[0];
+                    GameManager.instance.ShowInteractionPrompt(nextInter, nextInter.interactionPromptPos, nextInter.offsetPrompt);
+                }
             }
         }
     }
+
+
+    public void Interact()
+    {
+        if (currentInteraction)
+        {
+            isInteracting = true;
+            currentInteraction.OnPlayerStartInteracting();
+        }
+    }
+
 
 }

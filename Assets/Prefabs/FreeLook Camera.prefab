@@ -35,7 +35,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0.03, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1257886906149150604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,7 +60,7 @@ MonoBehaviour:
     LookAtTarget: {fileID: 0}
     CustomLookAtTarget: 0
   Lens:
-    FieldOfView: 40
+    FieldOfView: 53.2
     OrthographicSize: 8.88
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -92,10 +92,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Damping: {x: 0.1, y: 0.5, z: 3}
-  ShoulderOffset: {x: 1.28, y: 0.34, z: -1.33}
-  VerticalArmLength: 0.24
+  ShoulderOffset: {x: 1.26, y: 0.34, z: -1.33}
+  VerticalArmLength: 0.33
   CameraSide: 1
-  CameraDistance: 1.2
+  CameraDistance: 1.47
   AvoidObstacles:
     Enabled: 0
     CollisionFilter:

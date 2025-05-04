@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2278653102953630547}
   - component: {fileID: 3774797372293108577}
   - component: {fileID: 4528201030488476738}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FrontPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,6 +86,37 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &4418016347720180105
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6254053887682559742}
+  m_Layer: 0
+  m_Name: InteractionUI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6254053887682559742
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4418016347720180105}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.555}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8831624811180024625}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8548234015423023339
 GameObject:
   m_ObjectHideFlags: 0
@@ -99,7 +130,7 @@ GameObject:
   - component: {fileID: 4461171688735328356}
   - component: {fileID: 5128917419076591856}
   - component: {fileID: 3172131468800556291}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: NPC
   m_TagString: NPC
   m_Icon: {fileID: 0}
@@ -120,6 +151,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2278653102953630547}
+  - {fileID: 6254053887682559742}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3916322920235659458
@@ -190,7 +222,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 2
@@ -210,4 +242,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4a91a5a3a72c9469eb1585db6284c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionCollider: {fileID: 0}
+  interactionPromptPos: {fileID: 6254053887682559742}
+  offsetPrompt: {x: 0, y: 0, z: 0}

@@ -3,39 +3,53 @@ using UnityEngine;
 
 public class Interaction : MonoBehaviour
 {
+    public Transform interactionPromptPos;
+    public Vector3 offsetPrompt;
 
-    [SerializeField]
-    SphereCollider interactionCollider;
 
     bool playerLookingAtMe = false;
 
     private void Awake()
     {
-        interactionCollider= GetComponent<SphereCollider>();
+
     }
 
 
     public bool PlayerIsLookingMe
     {
         get { return playerLookingAtMe; }
-        set { playerLookingAtMe = value; } 
+        set { playerLookingAtMe = value; }
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    public void OnPlayerLooking()
+    public void OnPlayerStartInteracting()
     {
         Debug.Log("Mi guarda");
     }
 
 
-    public void OnPlayerStopLooking()
+    public void OnPlayerStopInteracting()
     {
         Debug.Log("Non mi guarda");
     }
+
+    public void OnStartInteraction()
+    {
+
+    }
+
+
+    public void OnEndInteraction()
+    {
+
+    }
+
+
+
 }

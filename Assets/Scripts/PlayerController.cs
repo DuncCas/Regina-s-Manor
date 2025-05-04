@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     private InputAction move;
     private InputAction jump;
     private InputAction look;
+    private InputAction interaction;
     Vector3 moveDirection =new Vector3(0,0,0);
     Vector2 lookRotation = new Vector2(0,0);
     
@@ -54,6 +55,7 @@ public class PlayerController : MonoBehaviour
         raycastDistance = (playerHeight / 2) + 0.2f;
         playerInputSystem.Player.Look.performed += ctx => lookRotation = ctx.ReadValue<Vector2>();
         playerInputSystem.Player.Look.canceled += ctx => lookRotation = Vector2.zero;
+        playerInputSystem.Player.Interact.performed += ctx => Interact(ctx);
         //nextRotation = lookRotation;
 
         // Hides the mouse
@@ -69,6 +71,8 @@ public class PlayerController : MonoBehaviour
         jump.Enable();
         look = playerInputSystem.Player.Look;
         look.Enable();
+        interaction = playerInputSystem.Player.Interact;
+        interaction.Enable();
 
     }
 
@@ -77,6 +81,7 @@ public class PlayerController : MonoBehaviour
         move.Disable();
         jump.Disable();
         look.Disable();
+        interaction.Disable();
     }
 
     // Update is called once per frame
@@ -158,5 +163,13 @@ public class PlayerController : MonoBehaviour
     {
         isJumping = true;
     }
+
+    private void Interact(InputAction.CallbackContext context)
+    {
+        Debug.Log("Premuto");
+        Player player= GetComponent<Player>();
+        player.Interact();
+    }
+
 
 }
