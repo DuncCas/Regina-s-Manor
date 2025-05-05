@@ -1,10 +1,13 @@
+using Ink.Parsed;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Interaction : MonoBehaviour
 {
     public Transform interactionPromptPos;
     public Vector3 offsetPrompt;
+    public List<string> listOfKnotsNames;
 
 
     bool playerLookingAtMe = false;
@@ -30,7 +33,7 @@ public class Interaction : MonoBehaviour
 
     public void OnPlayerStartInteracting()
     {
-        Debug.Log("Mi guarda");
+        GameManager.instance.dialogueEvents.EnterDialogue(listOfKnotsNames[0]);
     }
 
 

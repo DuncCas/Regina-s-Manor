@@ -11,9 +11,12 @@ public class GameManager : MonoBehaviour
 
     public InteractionPrompt interactionPrompt;
 
+    public DialogueEvents dialogueEvents;
+
     private void Awake()
     {
         instance = this;
+        dialogueEvents = new DialogueEvents();  
     }
 
     private GameManager()

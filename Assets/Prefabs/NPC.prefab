@@ -244,3 +244,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionPromptPos: {fileID: 6254053887682559742}
   offsetPrompt: {x: 0, y: 0, z: 0}
+  listOfKnotsNames:
+  - Buonase
