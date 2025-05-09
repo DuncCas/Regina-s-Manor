@@ -242,7 +242,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4a91a5a3a72c9469eb1585db6284c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionName: Antonello Tomeo
   interactionPromptPos: {fileID: 6254053887682559742}
   offsetPrompt: {x: 0, y: 0, z: 0}
   listOfKnotsNames:
   - Buonase
+  interactionImage: {fileID: 21300000, guid: 1d6f63cf8cd9aa64a8f7cea4da605c3e, type: 3}

@@ -17,8 +17,7 @@ public class DialogueManager : MonoBehaviour
 
 
     private bool inDialogue = false;
-    public Image dialogueBox;
-    public TextMeshProUGUI text;
+    public DialogueBoxManager dialogueBox;
 
     private void Awake()
     {
@@ -38,7 +37,7 @@ public class DialogueManager : MonoBehaviour
 
 
 
-    public void EnterDialogue(string knotName)
+    public void EnterDialogue(string knotName, Interaction inter=null)
     {
         if (inDialogue)
         {
@@ -56,16 +55,23 @@ public class DialogueManager : MonoBehaviour
         {
             Debug.LogWarning("Knot name is null or empty!");
         }
-        ConinueOrExitStory();
+        ConinueOrExitStory(inter);
     }
 
-    private void ConinueOrExitStory()
+    private void ConinueOrExitStory(Interaction inter)
     {
         if (story.canContinue)
         {
-            text.text = "";
             string dialogueLine = story.Continue();
-            text.text = dialogueLine;
+            if (inter)
+            {
+            dialogueBox.SetUpDialogueBox(dialogueLine, inter.interactionName, inter.interactionImage);
+
+            }
+            else
+            {
+                dialogueBox.SetUpDialogueBox(dialogueLine);
+            }
         }
         else
         {

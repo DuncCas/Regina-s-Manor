@@ -5,9 +5,11 @@ using UnityEngine;
 
 public class Interaction : MonoBehaviour
 {
+    public string interactionName;
     public Transform interactionPromptPos;
     public Vector3 offsetPrompt;
     public List<string> listOfKnotsNames;
+    public Sprite interactionImage;
 
 
     bool playerLookingAtMe = false;
@@ -33,7 +35,7 @@ public class Interaction : MonoBehaviour
 
     public void OnPlayerStartInteracting()
     {
-        GameManager.instance.dialogueEvents.EnterDialogue(listOfKnotsNames[0]);
+        GameManager.instance.dialogueEvents.EnterDialogue(listOfKnotsNames[0], this);
     }
 
 
