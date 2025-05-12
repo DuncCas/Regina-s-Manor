@@ -9,14 +9,12 @@ VAR ask_about_job=false
 You notice this one skelly creature by the side of X. By the looks, you can say the...
 Uhm not really you can't say anything, since you can't really tell by the unreadable, pale and dead stare.
 But the skeleton, even in your ignorance, notices of your presence.
-
 'Sup
-
-* Hello, gorgeous..
+* [Hello, gorgeous..]
 ->Greeting_Bad
-* And a talking skeleton... of course
+* [And a talking skeleton... of course]
 ->Greeting_neutral
-* Hey.
+* [Hey.]
 ->Greeting_good
 
 

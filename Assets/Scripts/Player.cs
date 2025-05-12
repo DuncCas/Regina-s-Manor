@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
     [SerializeField]
     bool isInteracting= false;
 
+    PlayerController playerController;
+
 
     public GameObject ObjectPlayerLookingAt
     {
@@ -50,9 +52,12 @@ public class Player : MonoBehaviour
         
     }
 
+    private void Awake()
+    {
+        playerController = GetComponent<PlayerController>();
+    }
 
-
-    public void OnNewInteraction(Interaction newInteraction)
+    public void OnFoundNewInteraction(Interaction newInteraction)
     {
         if (!currentCloseInteractions.Contains(newInteraction))
         {
@@ -67,7 +72,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void OnEndInteraction(Interaction oldInteraction)
+    public void OnMissingInteraction(Interaction oldInteraction)
     {
         if (currentCloseInteractions.Contains(oldInteraction))
         {
@@ -94,8 +99,26 @@ public class Player : MonoBehaviour
         if (currentInteraction)
         {
             isInteracting = true;
+            GameManager.instance.HideInteractionPrompt();
+            GameManager.instance.playerControllerEvents.StopMovement();
             currentInteraction.OnPlayerStartInteracting();
+
         }
+    }
+
+    public void OnEndInteraction(bool shouldRemoveCurrentInteraction)
+    {
+        if (!shouldRemoveCurrentInteraction)
+        {
+        GameManager.instance.ShowInteractionPrompt(currentInteraction, currentInteraction.interactionPromptPos, currentInteraction.offsetPrompt);
+        }
+        else
+        {
+            OnMissingInteraction(currentInteraction);
+            //CASO IN CUI QUELLO CON CUI STAVO INTERAGENDO è SPARITO
+        }
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
 

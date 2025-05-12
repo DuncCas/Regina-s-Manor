@@ -1183,6 +1183,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3172131468800556291, guid: 049534f3976fd9245bb15b1eaefce741, type: 3}
+      propertyPath: 'listOfKnotsNames.Array.data[0]'
+      value: Buonase
+      objectReference: {fileID: 0}
     - target: {fileID: 8548234015423023339, guid: 049534f3976fd9245bb15b1eaefce741, type: 3}
       propertyPath: m_Name
       value: NPC
@@ -1252,6 +1256,10 @@ PrefabInstance:
       propertyPath: dialogueBox
       value: 
       objectReference: {fileID: 11056089}
+    - target: {fileID: 1996562460071998249, guid: ad8faddf91e7667458d6524bd7d691e4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5221735873358093754, guid: ad8faddf91e7667458d6524bd7d691e4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.10383
@@ -1320,6 +1328,10 @@ PrefabInstance:
     - target: {fileID: 4169176424507245952, guid: fc0f5c9c817b9ef4ea473b8946ced135, type: 3}
       propertyPath: m_Name
       value: DialogueCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4169176424507245952, guid: fc0f5c9c817b9ef4ea473b8946ced135, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4297428161714020965, guid: fc0f5c9c817b9ef4ea473b8946ced135, type: 3}
       propertyPath: m_Pivot.x
@@ -1399,6 +1411,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4297428161714020965, guid: fc0f5c9c817b9ef4ea473b8946ced135, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4644983526858332298, guid: fc0f5c9c817b9ef4ea473b8946ced135, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4644983526858332298, guid: fc0f5c9c817b9ef4ea473b8946ced135, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

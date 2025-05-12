@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public float sensitivityX = 4f;
     public float sensitivityY = 2f;
 
+    bool allowMovement = true;
 
 
     Rigidbody rb;
@@ -63,6 +64,8 @@ public class PlayerController : MonoBehaviour
         Cursor.visible = false;
     }
 
+
+
     private void OnEnable()
     {
         move = playerInputSystem.Player.Move;
@@ -73,6 +76,8 @@ public class PlayerController : MonoBehaviour
         look.Enable();
         interaction = playerInputSystem.Player.Interact;
         interaction.Enable();
+        GameManager.instance.playerControllerEvents.onStartMovement += StartMovement;
+        GameManager.instance.playerControllerEvents.onStopMovement += StopMovement;
 
     }
 
@@ -82,11 +87,32 @@ public class PlayerController : MonoBehaviour
         jump.Disable();
         look.Disable();
         interaction.Disable();
+        GameManager.instance.playerControllerEvents.onStartMovement -= StartMovement;
+        GameManager.instance.playerControllerEvents.onStopMovement -= StopMovement;
     }
+
+
+    public void StartMovement()
+    {
+        allowMovement = true;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+    }
+
+    public void StopMovement()
+    {
+        allowMovement = false;
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
+    }
+
 
     // Update is called once per frame
     void Update()
     {
+        if (allowMovement)
+        {
 
         moveDirection = move.ReadValue<Vector2>(); //Calcolo la direzione a seconda di quali pulsanti ho premuto
         lookRotation= look.ReadValue<Vector2>();
@@ -111,11 +137,17 @@ public class PlayerController : MonoBehaviour
         {
             groundCheckTimer -= Time.deltaTime;
         }
+        }
+
     }
     private void FixedUpdate()
     {
-        MovePlayer();
-        ApplyJumpPhysics();
+        if (allowMovement)
+        {
+            MovePlayer();
+            ApplyJumpPhysics();
+        }
+           
     }
 
     void MovePlayer()

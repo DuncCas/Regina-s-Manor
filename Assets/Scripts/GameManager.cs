@@ -13,16 +13,21 @@ public class GameManager : MonoBehaviour
 
     public DialogueEvents dialogueEvents;
 
+    public PlayerControllerEvents playerControllerEvents;
+
+    public UIControllerEvents UIControllerEvents;
+
     private void Awake()
     {
         instance = this;
         dialogueEvents = new DialogueEvents();  
+        playerControllerEvents = new PlayerControllerEvents();
+        UIControllerEvents = new UIControllerEvents();  
     }
 
     private GameManager()
     {
-        // initialize your game manager here. Do not reference to GameObjects here (i.e. GameObject.Find etc.)
-        // because the game manager will be created before the objects
+       
     }
 
 

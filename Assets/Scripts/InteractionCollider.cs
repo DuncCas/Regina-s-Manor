@@ -17,7 +17,7 @@ public class InteractionCollider : MonoBehaviour
         Interaction inter = other.gameObject.GetComponent<Interaction>();
         if (inter)
         {
-            playerRef.OnNewInteraction(inter);
+            playerRef.OnFoundNewInteraction(inter);
         }
     }
     private void OnTriggerExit(Collider other)
@@ -25,7 +25,7 @@ public class InteractionCollider : MonoBehaviour
         Interaction inter = other.gameObject.GetComponent<Interaction>();
         if (inter)
         {
-            playerRef.OnEndInteraction(inter);
+            playerRef.OnMissingInteraction(inter);
         }
     }
 
