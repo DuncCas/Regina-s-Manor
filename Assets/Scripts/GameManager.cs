@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
 
     public UIControllerEvents UIControllerEvents;
 
+    public NPC[] NPCManager=new NPC[3];
+
     private void Awake()
     {
         instance = this;
@@ -57,6 +59,14 @@ void Start()
     // Update is called once per frame
     void Update()
     {
-        
+
     }
+}
+
+
+
+public enum ROOTS {
+SKELLY,
+JOHN,
+DEMETRA
 }

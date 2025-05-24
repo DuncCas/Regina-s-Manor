@@ -15,6 +15,7 @@ public class DialogueBoxManager : MonoBehaviour
     public Image speakerImage;
     public TextMeshProUGUI dialogueText;
     public ChoiceButton[] choiceButtons = new ChoiceButton[3];
+    PlayerInputSystem inputSystem;
 
     private void Awake()
     {

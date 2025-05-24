@@ -5,11 +5,11 @@ VAR allreadySaid = false
 ===Buonase===
 Buonasè
 
-    * Maronne san gennà
+    * [Maronne san gennà]
     ->REAL_NEAPOLITAN
-    + Sorry i don't speak neapolitan
+    + [Sorry i don't speak neapolitan]
     ->NOT_NEAPOLITAN
-    * Sto facenn nu marunn cacio e maccarun  e nishuno mi deve scazza ru cazz
+    * [Sto facenn nu marunn cacio e maccarun  e nishuno mi deve scazza ru cazz]
     ->REAL_NEAPOLITAN
 
 === REAL_NEAPOLITAN ===

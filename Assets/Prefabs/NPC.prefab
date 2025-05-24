@@ -129,7 +129,7 @@ GameObject:
   - component: {fileID: 3916322920235659458}
   - component: {fileID: 4461171688735328356}
   - component: {fileID: 5128917419076591856}
-  - component: {fileID: 3172131468800556291}
+  - component: {fileID: 3491668449652171771}
   m_Layer: 6
   m_Name: NPC
   m_TagString: NPC
@@ -230,7 +230,7 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3172131468800556291
+--- !u!114 &3491668449652171771
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -239,7 +239,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8548234015423023339}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a4a91a5a3a72c9469eb1585db6284c7, type: 3}
+  m_Script: {fileID: 11500000, guid: 2416f03d4f861ea42a4db5e6fc00085e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   interactionName: Antonello Tomeo

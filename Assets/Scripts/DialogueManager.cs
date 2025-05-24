@@ -2,6 +2,7 @@ using Ink.Runtime;
 using JetBrains.Annotations;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 using TMPro;
 using UnityEngine;
@@ -10,7 +11,7 @@ using UnityEngine.UI;
 public class DialogueManager : MonoBehaviour
 {
     [SerializeField]
-    private TextAsset inkJson;
+    private TextAsset currentInkJson;
 
     Interaction currentInteraction;
 
@@ -23,9 +24,18 @@ public class DialogueManager : MonoBehaviour
     private bool inDialogue = false;
     public DialogueBoxManager dialogueBox;
 
+    private InkInternalFunctions inkInternalFunctions;
+
     private void Awake()
     {
-        story = new Story(inkJson.text);
+        story = new Story(currentInkJson.text);
+        inkInternalFunctions = new InkInternalFunctions();
+        inkInternalFunctions.Bind(story);
+    }
+
+    private void OnDestroy()
+    {
+        inkInternalFunctions.Unbind(story);
     }
 
 

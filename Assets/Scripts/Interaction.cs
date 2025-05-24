@@ -10,6 +10,7 @@ public class Interaction : MonoBehaviour
     public Vector3 offsetPrompt;
     public List<string> listOfKnotsNames;
     public Sprite interactionImage;
+    public TextAsset inkStoryJson;
 
 
     bool playerLookingAtMe = false;

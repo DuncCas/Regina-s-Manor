@@ -24,6 +24,7 @@ public class InteractionPrompt : MonoBehaviour
     private void Awake()
     {
         canvas = gameManager.canvas;
+        gameManager = GameManager.instance;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
