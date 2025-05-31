@@ -96,11 +96,11 @@ public class Player : MonoBehaviour
 
     public void Interact()
     {
-        if (currentInteraction)
+        if (currentInteraction && !isInteracting)
         {
             isInteracting = true;
             GameManager.instance.HideInteractionPrompt();
-            GameManager.instance.playerControllerEvents.StopMovement();
+            //GameManager.instance.playerControllerEvents.StopMovement();
             currentInteraction.OnPlayerStartInteracting();
 
         }

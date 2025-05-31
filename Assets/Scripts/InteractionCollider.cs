@@ -14,9 +14,11 @@ public class InteractionCollider : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Person");
         Interaction inter = other.gameObject.GetComponent<Interaction>();
         if (inter)
         {
+            
             playerRef.OnFoundNewInteraction(inter);
         }
     }

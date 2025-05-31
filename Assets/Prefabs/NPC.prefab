@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 4461171688735328356}
   - component: {fileID: 5128917419076591856}
   - component: {fileID: 3491668449652171771}
+  - component: {fileID: 6321326216084649228}
   m_Layer: 6
   m_Name: NPC
   m_TagString: NPC
@@ -217,7 +218,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -248,3 +249,31 @@ MonoBehaviour:
   listOfKnotsNames:
   - Buonase
   interactionImage: {fileID: 21300000, guid: 1d6f63cf8cd9aa64a8f7cea4da605c3e, type: 3}
+  inkStoryJson: {fileID: 0}
+--- !u!54 &6321326216084649228
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8548234015423023339}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
